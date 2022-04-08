@@ -17,3 +17,8 @@
     border-radius: 1em;
     position: relative;
 }
+.footer{
+    width: 80%;
+    position: fixed;
+    bottom: 3rem;
+}

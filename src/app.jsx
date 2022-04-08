@@ -14,7 +14,9 @@ function App(props) {
         <Header/>
         <Total/>
         <List/>
+        <div className={styles.footer}>
         <Footer/>
+        </div>
         {
           props.popup ? <Popup/> : <></>
         }
