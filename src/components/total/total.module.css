@@ -1,0 +1,45 @@
+.totalWrap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;    
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 23rem;
+    text-align: center;
+    height: 9rem;
+    background-color: rgb(115, 200, 153);
+    border-radius: 2rem;
+    box-shadow: 3px 3px 3px 3px rgba(166, 166, 166, 0.728);
+}
+.totalMoney{
+    color: whitesmoke;
+    font-size: 2.5rem;
+}
+.plusMinus{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.plus,.minus{
+    display: flex;
+    align-items: center;
+}
+.plusMinsCount{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.icon{
+    background-color: rgba(245, 245, 245, 0.436);
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    font-size: 0.5rem;
+    box-sizing: border-box;
+    padding: 0.2rem;
+    margin-right: 1rem;
+}
