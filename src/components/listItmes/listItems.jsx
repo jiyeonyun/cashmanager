@@ -7,7 +7,7 @@ const ListItems = (props) => {
             <span className={styles.type}>{props.type}</span>
             <div className={styles.nameCash}>
                 <span className={styles.name}>{props.content}</span>
-                <span className={styles.cash}>{props.cost}₩</span>
+                <span className={styles.cash}>{Number(props.cost).toLocaleString()}원</span>
             </div>
         </li>
 
