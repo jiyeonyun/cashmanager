@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import styles from './app.module.css';
 import Calender from './components/calender/calender';
@@ -8,11 +8,12 @@ import List from './components/list/list';
 import Popup from './components/popup/popup';
 import Total from './components/total/total';
 function App(props) {
+    
   return (
     <div className={styles.wrap}>
       <div className={styles.innerWrap}>
         <Header/>
-        <Total/>
+        <Total />
         <List/>
         <div className={styles.footer}>
         <Footer/>
@@ -32,7 +33,8 @@ function App(props) {
 function stateProps(state){
   return{
     popup : state.popup,
-    calendar :state.calendar
+    calendar :state.calendar,
+    add: state.add
   }
 }
 
