@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './popup.module.css';
+import {connect} from 'react-redux';
 
 const Popup = (props) => {
     return(
@@ -35,12 +36,28 @@ const Popup = (props) => {
                     </ul>
                 </div>
                 <div className={styles.buttons2}>
-                    <button className={styles.Pbutton}>저장</button>
-                    <button className={styles.Pbutton}>닫기</button>
+                    <button 
+                        className={styles.Pbutton}
+                        onClick={()=>{props.dispatch({type:'toggle'})}}
+                    >
+                    저장
+                    </button>
+                    <button 
+                        className={styles.Pbutton}
+                        onClick={()=>{props.dispatch({type:'toggle'})}}
+                    >
+                    닫기
+                    </button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Popup;
+function stateProps(state){
+    return{
+        popup : state.reducer
+    }
+}
+
+export default connect(stateProps)(Popup);

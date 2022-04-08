@@ -4,11 +4,29 @@ import './index.css';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-function reducer(){
-  return [{id : 0, name : '멋진신발', quan : 2}]
+import {combineReducers, createStore} from 'redux';
+let popupState = false;
+const calendarState = false;
+
+function reducer(state = popupState, action ){
+  if(action.type === 'toggle'){
+    return !state;
+  }
+  else{
+    return state
+  }
 }
-let store = createStore(reducer);
+
+function reducer2(state = calendarState, action ){
+  if(action.type === 'toggleCalendar'){
+    return !state;
+  }
+  else{
+    return state
+  }
+}
+
+let store = createStore(combineReducers({reducer,reducer2}));
 
 ReactDOM.render(
   <React.StrictMode>
