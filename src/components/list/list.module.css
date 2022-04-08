@@ -1,0 +1,31 @@
+.listWrap{
+    margin-top: 2rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+.listName{
+    font-size: 1rem;
+}
+.listItem{
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    color: rgb(116, 116, 116);
+}
+.list{
+    margin: 0;
+    margin-top: 2rem;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
