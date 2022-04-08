@@ -12,7 +12,6 @@ const Popup = (props) => {
     const inputRef = useRef('');
     const contentRef = useRef('');
     const selectRef = useRef('');
-
     const buttonClick = (e)=>{
         if(e.target.innerText == '수입'){
             setPlus(true);
