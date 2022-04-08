@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './popup.module.css';
-import {connect} from 'react-redux';
+import {connect, useStore} from 'react-redux';
 
 const Popup = (props) => {
+    const [plus,setPlus] = useState(false);
+    const [minus,setMinus] = useState(false);
+    const onClick = (e)=>{
+        if(e.target.innerText == '수입'){
+            setPlus(true);
+            setMinus(false);
+        }
+        else{
+            setPlus(false);
+            setMinus(true);
+        }
+    }
     return(
         <div className={styles.wrap}>
             <div className={styles.popup}>
                 <div className={styles.buttons}>
-                    <button className={styles.button} style={{color:'rgb(8, 144, 47)'}}> 수입 </button>
-                    <button className={styles.button}> 지출 </button>
+                    <button className={styles.button} 
+                            onClick={onClick}
+                            style={{color: plus ? 'white':'rgb(8, 144, 47)',backgroundColor: plus ? 'rgb(8, 144, 47)' : 'whitesmoke' }}> 
+                            수입 
+                    </button>
+                    <button className={styles.button}
+                            onClick={onClick}
+                            style={{color: minus ? 'white':'rgb(179, 26, 26)',backgroundColor: minus ? 'rgb(179, 26, 26)' : 'whitesmoke' }}> 
+                            지출 
+                    </button>
                 </div>
                 <div className={styles.moneyWrap}>
                     <ul className={styles.ul}>
