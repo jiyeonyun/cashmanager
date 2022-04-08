@@ -8,7 +8,14 @@ const Calender = (props) => {
     const[value,onChange] =useState(new Date());
     return(
         <div className={styles.calendarWrap}>
-            <Calendar onChange={onChange} value={value}/>
+            <Calendar 
+                onChange={onChange} 
+                value={value}
+                minDetail="month"
+                maxDetail="month" 
+                navigationLabel={null}
+                showNeighboringMonth={false}
+                />
         </div>
     );
 };

@@ -21,8 +21,8 @@ const Footer = (props) => {
 
 function stateProps(state){
     return{
-        popup : state.reducer,
-        calendar : state.reducer2
+        popup : state.popup,
+        calendar : state.calendar
     }
 }
 export default connect(stateProps)(Footer);

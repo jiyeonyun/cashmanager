@@ -1,6 +1,7 @@
 import React from 'react';
 import ListItems from '../listItmes/listItems';
 import styles from './list.module.css';
+import {connect} from 'react-redux';
 const List = (props) => {
     return(
         <div className={styles.listWrap}>
@@ -14,10 +15,25 @@ const List = (props) => {
                 </div>
             </header>
             <ul className={styles.list}>
-                <ListItems/>
+                {props.add.map(add=>(
+                <ListItems
+                        key={add.id}
+                        plusMinus={add.plusMinus}
+                        type={add.type}
+                        cost={add.cost}
+                        content={add.content}
+                />
+            )
+            )}
+                
             </ul>
         </div>
     );
 };
 
-export default List;
+function stateProps(state){
+    return{
+        add : state.add
+    }
+}
+export default connect(stateProps)(List);

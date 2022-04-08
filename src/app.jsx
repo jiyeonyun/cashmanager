@@ -29,8 +29,8 @@ function App(props) {
 
 function stateProps(state){
   return{
-    popup : state.reducer,
-    calendar :state.reducer2
+    popup : state.popup,
+    calendar :state.calendar
   }
 }
 

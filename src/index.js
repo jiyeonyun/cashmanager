@@ -6,9 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {combineReducers, createStore} from 'redux';
 let popupState = false;
-const calendarState = false;
+let calendarState = false;
+let addState = [];
 
-function reducer(state = popupState, action ){
+function popup(state = popupState, action ){
   if(action.type === 'toggle'){
     return !state;
   }
@@ -17,7 +18,7 @@ function reducer(state = popupState, action ){
   }
 }
 
-function reducer2(state = calendarState, action ){
+function calendar(state = calendarState, action ){
   if(action.type === 'toggleCalendar'){
     return !state;
   }
@@ -25,8 +26,19 @@ function reducer2(state = calendarState, action ){
     return state
   }
 }
+function add(state = addState ,action){
+  if(action.type === 'add'){
+    let copy = [...state];
+    copy.push(action.payload);
+    console.log(copy);
+    return copy;
+  }
+  else{
+    return state
+  }
+}
 
-let store = createStore(combineReducers({reducer,reducer2}));
+let store = createStore(combineReducers({popup,calendar,add}));
 
 ReactDOM.render(
   <React.StrictMode>
