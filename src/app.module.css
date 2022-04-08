@@ -1,0 +1,19 @@
+.wrap{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(255, 255, 255); 
+    
+}
+.innerWrap{
+    background-color:rgb(247, 247, 247);   
+    width: 30rem;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1em;
+    position: relative;
+}

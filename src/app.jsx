@@ -1,8 +1,20 @@
-import './app.css';
-
+import styles from './app.module.css';
+import Footer from './components/footer/footer';
+import Header from './components/header/header';
+import List from './components/list/list';
+import Popup from './components/popup/popup';
+import Total from './components/total/total';
 function App() {
   return (
-    <h1>hello</h1>
+    <div className={styles.wrap}>
+      <div className={styles.innerWrap}>
+        <Header/>
+        <Total/>
+        <List/>
+        <Footer/>
+        {/* <Popup/> */}
+      </div>
+    </div>
   );
 }
 
