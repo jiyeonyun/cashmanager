@@ -14,6 +14,7 @@ const List = (props) => {
                     <span className={styles.listItem}>초기화</span>
                 </div>
             </header>
+            <div className={styles.listWrap}>
             <ul className={styles.list}>
                 {props.add.map(add=>(
                 <ListItems
@@ -24,9 +25,9 @@ const List = (props) => {
                         content={add.content}
                 />
             )
-            )}
-                
+            )}    
             </ul>
+            </div>
         </div>
     );
 };
