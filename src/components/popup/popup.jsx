@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styles from './popup.module.css';
-import {connect, useStore} from 'react-redux';
+import {connect} from 'react-redux';
 
 const Popup = (props) => {
     const [plus,setPlus] = useState(false);
@@ -13,7 +13,7 @@ const Popup = (props) => {
     const contentRef = useRef('');
     const selectRef = useRef('');
     const buttonClick = (e)=>{
-        if(e.target.innerText == '수입'){
+        if(e.target.innerText === '수입'){
             setPlus(true);
             setMinus(false);
             setPlusMinus('수입');

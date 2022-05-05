@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import styles from './app.module.css';
 import Calender from './components/calender/calender';
