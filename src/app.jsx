@@ -7,16 +7,13 @@ import List from './components/list/list';
 import Popup from './components/popup/popup';
 import Total from './components/total/total';
 function App(props) {
-    
   return (
     <div className={styles.wrap}>
       <div className={styles.innerWrap}>
         <Header/>
         <Total />
         <List/>
-        <div className={styles.footer}>
         <Footer/>
-        </div>
         {
           props.popup ? <Popup/> : <></>
         }

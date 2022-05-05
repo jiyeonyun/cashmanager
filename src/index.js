@@ -7,7 +7,11 @@ import {Provider} from 'react-redux';
 import {combineReducers, createStore} from 'redux';
 let popupState = false;
 let calendarState = false;
-let addState = [{plusMinus:'',type:'구분',cost:'0',content:'내역입력'}];
+const today = new Date();
+const year = today.getFullYear();
+const month = today.getMonth();
+const day = today.getDate();
+let addState = [{plusMinus:'',type:'구분',cost:'0',content:'내역입력',date:`${year}/${month}/${day}`}];
 
 function popup(state = popupState, action ){
   if(action.type === 'toggle'){

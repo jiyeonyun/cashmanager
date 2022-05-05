@@ -3,6 +3,10 @@ import styles from './popup.module.css';
 import {connect} from 'react-redux';
 
 const Popup = (props) => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const day = today.getDate();
     const [plus,setPlus] = useState(false);
     const [minus,setMinus] = useState(false);
     const [plusMinus ,setPlusMinus] = useState('');
@@ -76,10 +80,12 @@ const Popup = (props) => {
                     <button 
                         className={styles.Pbutton}
                         onClick={()=>{
-                                        props.dispatch({type:'toggle'});
-                                        props.dispatch({type:'add',payload:{id:Date.now(),plusMinus:`${plusMinus}`,type:`${type}`,cost:`${cost}`,content:`${content}`}});
-                                    }
-                                }
+                            props.dispatch({type:'toggle'});
+                            props.dispatch({type:'add',
+                            payload:{id:Date.now(),plusMinus:`${plusMinus}`,type:`${type}`,cost:`${cost}`,
+                            content:`${content}`,date:`${year}/${month}/${day}`
+                            }});
+                        }}
                     >
                     저장
                     </button>
